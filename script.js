@@ -5,6 +5,122 @@ Copyright (c) 2020 by Sean Boullianne. All rights reserved. May be freely
 copied of excerpted for educational purposes with credit to the author.
 Updated by Sean Boullianne on 8/6/2020
 */
+var tabIndex = 1;
+
+function tabs() {
+
+  $("#tabs").tabs();
+
+  var xStart = Number(document.getElementById("xStart").value);
+  var xEnd = Number(document.getElementById("xEnd").value);
+  var yStart = Number(document.getElementById("yStart").value);
+  var yEnd = Number(document.getElementById("yEnd").value);
+
+  tabIndex++;
+
+  var title = "<li class='tab'><a href='#tab-" + tabIndex + "'>" + "Title" + "</a>" +
+              "<span class='ui-icon ui-icon-close' role='presentation'></span>" + "</li>";
+
+  $("#tabs ul").append(title);
+
+  $("#tabs").append('<div id="tab-' + '4' + '">' + $("#myTable").html() + '</div>');
+
+  $( "#tabs" ).tabs("refresh");
+
+  $( "#tabs" ).tabs("option", "active", -1);
+
+  
+}
+
+// function to automatically update table
+function update() {
+  $("#input-form").submit();
+}
+
+// function for sliders
+function slider() {
+
+  // xStart slider
+  $("#slider_xStart").slider({
+    min: -50,
+    max: 50,
+    // slider updates value
+    slide: function(event, ui) {
+      $("#xStart").val(ui.value);
+      update();
+    }
+  });
+  // value update slider
+  $("#xStart").on("change", function() {
+    $("#slider_xStart").slider("value", this.value);
+    update();
+  });
+
+  // xEnd slider
+  $("#slider_xEnd").slider({
+    min: -50,
+    max: 50,
+    // slider updates value
+    slide: function(event, ui) {
+      $("#xEnd").val(ui.value);
+      update();
+    }
+  });
+  // value update slider
+  $("#xEnd").on("change", function() {
+    $("#slider_xEnd").slider("value", this.value);
+    update();
+  });
+
+  // xEnd slider
+  $("#slider_xEnd").slider({
+    min: -50,
+    max: 50,
+    // slider updates value
+    slide: function(event, ui) {
+      $("#xEnd").val(ui.value);
+      update();
+    }
+  });
+  // value update slider
+  $("#xEnd").on("change", function() {
+    $("#slider_xEnd").slider("value", this.value);
+    update();
+  });
+
+  // yStart slider
+  $("#slider_yStart").slider({
+    min: -50,
+    max: 50,
+    // slider updates value
+    slide: function(event, ui) {
+      $("#yStart").val(ui.value);
+      update();
+    }
+  });
+  // value update slider
+  $("#yStart").on("change", function() {
+    $("#slider_yStart").slider("value", this.value);
+    update();
+  });
+
+  // yEnd slider
+  $("#slider_yEnd").slider({
+    min: -50,
+    max: 50,
+    // slider updates value
+    slide: function(event, ui) {
+      $("#yEnd").val(ui.value);
+      update();
+    }
+  });
+  // value update slider
+  $("#yEnd").on("change", function() {
+    $("#slider_yEnd").slider("value", this.value);
+    update();
+  });
+}
+
 
 // function that is called to validate the form, using jQuery validation plugin
 // borrowed structure from Jason Downing's Assignment 7
