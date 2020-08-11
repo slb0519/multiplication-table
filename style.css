@@ -1,0 +1,19 @@
+/*
+GUI Programming I HW6: Using the jQuery Validation Plugin with Your Dynamic Table
+Sean Boullianne, UMass Lowell Computer Science, Sean_Boullianne@student.uml.edu
+Copyright (c) 2020 by Sean Boullianne. All rights reserved. May be freely
+copied of excerpted for educational purposes with credit to the author.
+Updated by Sean Boullianne on 8/6/2020
+*/
+
+/* adding borders to the table */
+table, th, td {
+  border: solid;
+  margin-top: 15px;
+}
+
+/* adding formatting to the form validation errors */
+.error {
+  color: red;
+  font-weight: bold;
+}
